@@ -1,0 +1,22 @@
+---
+- name: Install OpenStack packages
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - nova-api
+    - nova-conductor
+    - nova-novncproxy
+    - nova-scheduler
+    - neutron-server
+    - neutron-linuxbridge-agent
+    - neutron-dhcp-agent
+    - neutron-metadata-agent
+    - keystone
+    - glance-api
+    - cinder-api
+    - cinder-scheduler
+    - cinder-volume
+    - heat-api
+    - heat-api-cfn
+    - heat-engine

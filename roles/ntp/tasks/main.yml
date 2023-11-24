@@ -1,0 +1,19 @@
+---
+- name: Install NTP
+  package:
+    name: ntp
+    state: present
+
+- name: Start and enable NTP service
+  service:
+    name: ntp
+    state: started
+    enabled: yes
+  when: "ansible_os_family == 'Debian'"
+
+- name: Start and enable NTP service
+  service:
+    name: ntpd
+    state: started
+    enabled: yes
+  when: "ansible_os_family == 'RedHat'"

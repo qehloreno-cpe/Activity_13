@@ -1,0 +1,7 @@
+---
+- name: Install SQL Database
+  package:
+    name: mariadb-server
+    state: present
+
+

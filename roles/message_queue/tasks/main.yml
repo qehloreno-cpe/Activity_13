@@ -1,0 +1,11 @@
+---
+- name: Install Message Queue (RabbitMQ)
+  package:
+    name: rabbitmq-server
+    state: present
+
+- name: Start and enable RabbitMQ service
+  service:
+    name: rabbitmq-server
+    state: started
+    enabled: yes

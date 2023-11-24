@@ -1,0 +1,11 @@
+---
+- name: Install Memcached
+  package:
+    name: memcached
+    state: present
+
+- name: Start and enable Memcached service
+  service:
+    name: memcached
+    state: started
+    enabled: yes
