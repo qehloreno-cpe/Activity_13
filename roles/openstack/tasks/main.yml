@@ -1,5 +1,5 @@
 ---
-- name: Install OpenStack packages
+- name: Install OpenStack packages on Ubuntu
   package:
     name: "{{ item }}"
     state: present
@@ -20,3 +20,18 @@
     - heat-api
     - heat-api-cfn
     - heat-engine
+  when: "ansible_os_family == 'Debian'"
+
+- name: Install OpenStack packages on CentOS
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - centos-release-openstack-victoria
+    - centos-release-openstack-ussuri
+    - centos-release-openstack-train
+    - centos-release-openstack-stein
+    - centos-release-openstack-rocky
+    - centos-release-openstack-queens
+    - centos-release-openstack-pike
+  when: "ansible_os_family == 'RedHat'"
