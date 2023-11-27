@@ -1,0 +1,4 @@
+192.168.56.107 ansible_python_interpreter=/usr/bin/python3
+
+[controller_node]
+192.168.56.107
